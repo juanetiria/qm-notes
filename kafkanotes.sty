@@ -1,13 +1,14 @@
-%==============STYLE DIMULAI==============%
 \usepackage[marginparwidth=6cm, marginparsep=0.7cm]{geometry}
-%Package Matematika
+%Math
 \usepackage{amsmath}
-%Style Gambar
+%figs
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{floatrow}
 \floatsetup[widefigure]{margins=hangright,capposition=beside,
 capbesideposition={bottom, right},floatwidth=\textwidth}
-%Package Catatan di Margin
+
+% Notes
 \usepackage{sidenotes}
 %Style \maketitle
 \usepackage{titlesec}
@@ -26,7 +27,8 @@ capbesideposition={bottom, right},floatwidth=\textwidth}
 \renewenvironment{abstract}
 	{\par{\bfseries \noindent \sffamily \abstractname.}}
 	{\vskip 0.1em \medskip\noindent \rule{\linewidth}{.5pt}}
-%Font Teks Utama dan Sesi
+
+%Fonts
 \usepackage{lmodern}
 \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 \usepackage[T1]{fontenc}
@@ -42,8 +44,7 @@ capbesideposition={bottom, right},floatwidth=\textwidth}
     linkcolor=black,
     urlcolor=black
 }
-%Pembahasaan ke Indonesia
+%renaming some titles
 \renewcommand{\figurename}{\footnotesize Figures}
 \renewcommand{\tablename}{\footnotesize Table}
 \renewcommand{\contentsname}{Table of Contents}
-%==============STYLE BERAKHIR==============%
