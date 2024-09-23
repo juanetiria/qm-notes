@@ -1,6 +1,11 @@
 \usepackage[marginparwidth=6cm, marginparsep=0.7cm]{geometry}
 %Math
 \usepackage{amsmath}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+
 %figs
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -45,6 +50,6 @@ capbesideposition={bottom, right},floatwidth=\textwidth}
     urlcolor=black
 }
 %renaming some titles
-\renewcommand{\figurename}{\footnotesize Figures}
+\renewcommand{\figurename}{\footnotesize Figure}
 \renewcommand{\tablename}{\footnotesize Table}
 \renewcommand{\contentsname}{Table of Contents}

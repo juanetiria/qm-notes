@@ -168,5 +168,83 @@ The Compton effect is proof of the wave-particle duality exhibited by the light,
 \section{Specific heat of a solid and a diatomic gas}
 
 
+\section{Stern-Gerlach experiment}
+The Stern-Gerlach experiment is a device designed to measure the z-component of an atom's magnetic moment; it consists of a furnace where Ag atoms are evaporated and then collimated to obtain a fine beam of atoms which pass through a non-homogeneous magnetic field. After passing along such configuration, the atoms are detected in a screen (See fig. \ref{fig:stern-gerlach}). 
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{figures/stern-gerlach-setup.pdf}
+  \caption{Stern-Gerlach experiment setup.}
+  \label{fig:stern-gerlach}
+\end{marginfigure}
+A closer look of the magnetic field can be observed in fig. \ref{fig:mag-profile}.
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{figures/field-profile.pdf}
+  \caption{magnetic field profile in the Stern-Gerlach experiment setup.}
+  \label{fig:mag-profile}
+\end{marginfigure}
+The Ag atoms carry 47 electrons, with 46 out of them being paired and the last one unpaired in the s-orbital. Thus, the magnetic moment is equal to 1$\mu_B$; in a fairly heavy atom. The classical trajectory is applicable here due to the high mass of the atom and the magnetic properties can be attributed almost exclusively to the electrons; while the magnetic moment of the nucleus is not zero, it is several orders of magnitude heavier than the electron.
+Classically, the the magnetic moment was expected in a continuous spectra of values and therefore, the screen should have shown a continuous and spread distribution. However, as it is often the case in quantum mechanical systems, the outcome was different; two very localized distributions where found in the upper and lower zones as shown in fig. \ref{fig:stern-gerlach}.
+
+The magnetic moment of the atom $\left|\vec{m}\right|$ is proportional to the electron's spin $\left|\vec{s}\right|=\pm\frac{\hbar}{2}$. The proportionality constant is $\frac{e}{m_ec}$, 
+
+\begin{align}\label{eq:magmom}
+  \left|\vec{m}\right| = \frac{e}{m_ec}\frac{\hbar}{2} = 1\mu_B.
+\end{align}
+
+The interaction energy of a dipole in a magnetic field is given by
+\begin{align}\label{eq:maginteraction}
+  \Delta E = -\vec{m}\vec{B},
+\end{align}
+and the force calculated from that potential energy is given by the gradient
+\begin{align}\label{eq:magforce}
+  \vec{F} = \vec{F_z} = \frac{\partial}{\partial z}(\vec{m}\vec{B})\approx m_z\frac{\partial B_z}{\partial z},
+\end{align}
+
+The potential energy is minimized when $\vec{m}$ aligns with the magnetic field $\vec{B}$. However, such alignment cannot occur unless a dissipative mechanism appears; in this case, there is no such mechanism. Thus, the magnetic moment is constantly precessing around the magnetic field in a way that he angle between both vectors and the energy $\Delta E$ are constant (see fig. \ref{fig:mom-precession}).
+\begin{marginfigure}%
+  \begin{centering}
+    \begin{tikzpicture}
+      \node[anchor=south west,inner sep=0] at (0,0) {  \includegraphics[width=0.3\linewidth]{figures/precessing.pdf}};
+      \node at (0.75,3.1) {$\theta$};
+      \node at (0.0,3.5) {$\vec{m}$};
+      \node at (1.5,1.5) {$\vec{s}$};
+    \end{tikzpicture}
+    \caption{Magnetic moment precession around the magnetic field.}\label{fig:mom-precession}
+  \end{centering}
+\end{marginfigure}
+In this sense, the Stern-Gerlach experiment is a device designed to measure the z-component of $\vec{m}$; giving an upwards force for $\vec{m}>0$ and a downwards force for $\vec{m}<0$. Therefore, a spread distribution of the atoms where expected according to the magnitude of their component in such direction. Conversely, two definite spots where observed (see fig. \ref{fig:s-g-results}).
+\begin{marginfigure}%
+  \begin{centering}
+  \includegraphics[width=\linewidth]{figures/s-g-result.pdf}
+  \caption{Expected vs obtained result in the Stern-Gerlach experiment}
+  \label{fig:s-g-results}
+  \end{centering}
+\end{marginfigure}
+The fact that only $s_z ^+=+\frac{\hbar}{2}$ and $s_z ^-=-\frac{\hbar}{2}$ are observed but $s_z=0$ is not present, lead us to classify this momentum in a different category than the angular momentum and therefore, it stands a a magnitude of a different nature; now known as the spin momentum.
+
+When further complexity is added to the experiment by stacking successive SG apparatuses with each stage prepared to measure a different component of the $\vec{s}$ momentum. In fig. \ref{fig:SGstack} two combination of the $s_x$ and $s_z$ measurements are shown.
+\begin{marginfigure}%
+  \begin{centering}
+  \includegraphics[width=\linewidth]{figures/SGstack.pdf}
+  \caption{Stacked Stern-Gerlach experiments}
+  \label{fig:SGstack}
+  \end{centering}
+\end{marginfigure}
+In the first case, we observe a selection of the $s_z ^+$ component while the $s_z ^-$ is discarded. In the next stage, another SG apparatus in set to prove that the system is in the state $s_z ^+$ and no $s_z ^-$ is observed. In the final stage, a SGx apparatus is added; Here, due to the fact that the system is in $s_z ^+$ state, one would expect no Ag atoms passing through the experiment. The result is different than expected, obtaining the two components $s_x ^+$ and $s_x ^-$.
+Here two conclusions are obtained, one is related to the destructive nature of the measuring process in quantum mechanical systems. Applying a SGz sets the system in all the possible values that $s_z$ can take; when the SGx is applied, the prior information of the system is destroyed, dividing it into the possible states $s_x$ can take. The second conclusion is that $s_z$ states are a linear superposition of $s_x$ states and vice-versa. Furthermore, it is not possible to know $s_x$, $s_y$ and $s_z$ simultaneously. Such phenomenon has no classical analogous. A classical spinning system like a top can be completely determined by its $\omega_x$, $\omega_y$, $\omega_z$ and its inertia moment I,
+\begin{align}\label{eq:angularmom}
+  \vec{L} = I\vec{\omega}.
+\end{align}
+
+Thus, $s_x$ and $s_z$ are defined inside an abstract two dimensional space with base vectors $\ket{s_z;+}$ and $\ket{s_z;-}$ such that
+\begin{align}\label{eq:superposition}
+  \ket{s_x;+}&=\frac{1}{\sqrt{2}}\ket{s_z;+}+\frac{1}{\sqrt{2}}\ket{s_z;-},\\
+  \ket{s_x;-}&=-\frac{1}{\sqrt{2}}\ket{s_z;+}+\frac{1}{\sqrt{2}}\ket{s_z;-}.
+\end{align}
+
+To define the $\ket{s_y;\pm}$, we need to seek help in wave polarization phenomena. Let
+\begin{align}\label{eq:monochromaticbeam}
+  \vec{E}=E_0\Re\{e^{i(ky-\omega t)}\hat{e}_z\}
+\end{align}
+be a z-polarized monochromatic beam of light traveling in the y-direction.
 
 \end{document}
