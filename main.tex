@@ -219,7 +219,7 @@ In this sense, the Stern-Gerlach experiment is a device designed to measure the 
   \label{fig:s-g-results}
   \end{centering}
 \end{marginfigure}
-The fact that only $s_z ^+=+\frac{\hbar}{2}$ and $s_z ^-=-\frac{\hbar}{2}$ are observed but $s_z=0$ is not present, lead us to classify this momentum in a different category than the angular momentum and therefore, it stands a a magnitude of a different nature; now known as the spin momentum.
+The fact that only $s_z ^+=+\frac{\hbar}{2}$ and $s_z ^-=-\frac{\hbar}{2}$ are observed but $s_z=0$ is not present, lead us to classify this momentum in a different category than the angular momentum and therefore, it stands as a magnitude of a different nature; now known as the spin momentum.
 
 When further complexity is added to the experiment by stacking successive SG apparatuses with each stage prepared to measure a different component of the $\vec{s}$ momentum. In fig. \ref{fig:SGstack} two combination of the $s_x$ and $s_z$ measurements are shown.
 \begin{marginfigure}%
@@ -245,6 +245,95 @@ To define the $\ket{s_y;\pm}$, we need to seek help in wave polarization phenome
 \begin{align}\label{eq:monochromaticbeam}
   \vec{E}=E_0\Re\{e^{i(ky-\omega t)}\hat{e}_z\}
 \end{align}
-be a z-polarized monochromatic beam of light traveling in the y-direction.
+be a z-polarized monochromatic beam of light traveling in the y-direction. Thus, using an intermediary coordinate system whose $\omega$ and $\nu$ axis are linear combination of the initial $x$ and $y$ axis as shown in fig. \ref{fig:rotatedaxis},
+\begin{marginfigure}%
+  \begin{centering}
+    \begin{tikzpicture}
+      \node[anchor=south west,inner sep=0] at (0,0) {    \includegraphics[width=\linewidth]{figures/rotatedaxis.pdf}};
+      \node at (2.1,3.5) {$\hat e_x$};
+      \node at (5.5,-0.2) {$\hat e_z$};
+      \node at (5,2.0) {$\hat e_\omega$};
+      \node at (0.2,2) {$\hat e_\nu$};
+      \node at (3.3,0.4) {$\frac{\pi}{4}$};
+    \end{tikzpicture}
+    \caption{Magnetic moment precession around the magnetic field.}\label{fig:rotatedaxis}
+  \end{centering}
+\end{marginfigure}
+we can define the relations
+\begin{align}\label{eq:axisrelations}
+  \hat{e}_\omega &= \frac{1}{\sqrt{2}}\hat{e}_z + \frac{1}{\sqrt{2}}\hat{e}_x\\
+  \hat{e}_\nu &= -\frac{1}{\sqrt{2}}\hat{e}_z + \frac{1}{\sqrt{2}}\hat{e}_x\\
+  \hat{e}_z &= \frac{1}{\sqrt{2}}\hat{e}_\omega - \frac{1}{\sqrt{2}}\hat{e}_{\nu}
+\end{align}
+tha allows us to build a correspondence between them and the spin states as follows
+\begin{align}\label{eq:axiscorrespond}
+  \ket{s_z+} \Leftrightarrow \hat{e}_{z}, \,& \ket{s_z-} \Leftrightarrow \hat{e} _{x}\\
+  \ket{s_x+} \Leftrightarrow \hat{e}_{\omega}, \,& \ket{s_x-} \Leftrightarrow \hat{e} _{\nu}
+\end{align}
+
+The set of equations \ref{eq:axisrelations} as in the case of polarization are key to write the z-polarized electric field as
+\begin{align}\label{eq:monochromaticbeam}
+  \vec{E}=\frac{E_0}{\sqrt{2}}\Re\{e^{i(ky-\omega t)}\hat{e}_\omega\} - \frac{E_0}{\sqrt{2}}\Re\{e^{i(ky-\omega t)}\hat{e}_\nu\}.
+\end{align}
+On the other hand, the set of correspondences \ref{eq:axiscorrespond} reproduce the set of equations \ref{eq:superposition} and employing the polarization analogy, the $\ket{s_y}$ can be obtained as a circularly polarized wave
+\begin{align}\label{eq:SyCircular}
+  \ket{s_y;+}&=\frac{1}{\sqrt{2}}\ket{s_z;+}+i\frac{1}{\sqrt{2}}\ket{s_z;-},\\
+  \ket{s_y;-}&=\frac{1}{\sqrt{2}}\ket{s_z;+}-i\frac{1}{\sqrt{2}}\ket{s_z;-}.
+\end{align}
+
+In conclusion, a complex space is needed to define the state of a quantum system. Additionally, the dimensionality of that system corresponds to the possible states in which the system can be found. The space where those states live is called a Hilbert Space.
+
+\section{Hilbert space}
+
+The space of the square integrable functions L$^2$(M) on a space manifold\footnote{or just manifold} M.
+\begin{quote}
+  A \textcolor{blue}{\textbf{manifold}} is a standard geometrical object which genralizes the intuitive concept of curve (1-manifold), surface (2-manifold) and so on a so fort.
+
+  It can be defined for real, complex and matrix bodies.
+\end{quote}
+
+Let us consider a Hilbert space
+\begin{align}
+  \mathcal{H}=\{\ket{\phi}, \ket{\psi},... \},
+\end{align}
+where each element of $\mathcal{H}$ is called a \textit{ket} or a ket vector. A linear function  $\alpha:\mathcal{H}\rightarrow \mathbb{C}$ is defined by
+\begin{align}
+  \alpha( c_1 \ket{\psi_1} + c_2\ket{\psi_2}) = c_1\alpha (\ket{\psi_1}) + c_2\alpha (\ket{\psi_2})\,,& & \forall_{c_i} \in \mathbb{C},\ket{\psi_i} \in \mathcal{H} 
+\end{align}
+Thus, using the Dirac's notation, we can introduce a dual space of $\mathcal{H}$, denoted by $\mathcal{H}^*$ where each element is called a \textit{bra} or a bra vector.
+Let $\{\ket{e_1},\ket{e_2},...\}$ be a basis of $\mathcal{H}$ such that any vector $\ket{\psi} \in \mathcal{H}$ can be expanded as
+\begin{align}
+  \ket{\psi} = \sum_k \psi_k\ket{e_k} && \psi_k \in \mathbb{C}
+\end{align}
+where $\psi_k$ is the k-th component of $\ket{\psi}$.
+Now let us introduce a basis $\{\bra{\varepsilon_1},\bra{\varepsilon_2},...\}$ in $\mathcal{H}^*$ such that it is a dual of basis $\{\ket{e_k}\}$. Therefore,
+\begin{align}
+  \braket{\varepsilon_i}{e_j}=\delta_{ij},
+\end{align}
+and we can expand $\bra{\alpha}$ as $\bra{\alpha}=\sum_k \alpha_k\bra{\varepsilon_k}$, where $\alpha_k$ is the k-th component of $\bra{\alpha}$ and $\alpha_k \in \mathbb{C}$. Now, we can express the action of $\bra{\alpha_k} \in \mathcal{H}^*$ on $\ket{\psi_i} \in \mathcal{H}$ in terms of their components
+\begin{align}
+  \braket{\alpha}{\psi}=\sum_{ij}\alpha_i \psi_j\braket{\varepsilon_i}{e_j} = \sum_{ij}\alpha_i \psi_j\delta_{ij} = \sum_{i}\alpha_i \psi_i.
+\end{align}
+
+\begin{quote}
+  $\ket{\psi}$ is a column vector while $\bra{\alpha}$ is a row vector, therefore, $\braket{\alpha}{\psi}$ is a matrix multiplication of two vectors yielding a scalar.
+\end{quote}
+\begin{quotation}
+  Due to the duality that $\mathcal{H}^*$ holds with respect to $\mathcal{H}$ a one-to-one correspondence can be established between the members of both spaces.
+\end{quotation}
+\begin{align}\label{eq:dualcorr}
+  \ket{\psi} = \sum_k \psi_k\ket{e_k}\in \mathcal{H} \Leftrightarrow \bra{\psi} = \sum_k \psi_k ^*\bra{\varepsilon_k}\in \mathcal{H}^*
+\end{align}
+The eq. \ref{eq:dualcorr} allow us to define a inner product between two elements of $\mathcal{H}$, $\ket{\psi}$ and $\ket{\phi}$
+\begin{align}
+  (\ket{\psi},\ket{\phi}) = \braket{\phi}{\psi}=\sum_k \phi^*\psi,
+\end{align}
+which immediately induces for the norm the result $\| \ket{\psi}\| = \sqrt{\braket{\psi}{\psi}}\geq 0$. Additionally, by means of the inner product, a orthonormal basis can be constructed.
+Let $\{\ket{e_k}\}$ be a basis such that $\braket{e_i}{e_j}=\delta_{ij}$, then
+\begin{align}
+  \ket{\psi} = \sum_k \psi_k \ket{e_k} \Rightarrow \braket{e_k}{\psi}=\psi_k \Rightarrow \ket{\psi} = \sum_k \braket{e_k}{\psi} \ket{e_k}\\
+  \Rightarrow \ket{\psi} = \sum_k \ket{e_k}\braket{e_k}{\psi} \Rightarrow \sum_k \ket{e_k}\bra{e_k} = I,
+\end{align}
+with $I$ as the identity operator in $\mathcal{H}$.
 
 \end{document}
