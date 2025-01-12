@@ -20,7 +20,6 @@ Lecture notes on Quantum Mechanics for 2024-2 course taught at the Universidad d
 
 \newgeometry{top=20mm,bottom=25mm,right=80mm,left=20mm}
 
-
 \section{Introduction}
 Before quantum mechanics, everything was explained in terms of particles and waves, separated worlds whose interaction was described by the Lorentz force or by thermodynamics. Only relativistic and microscopic systems were out of the reach of Newtonian physics. Atomic stability, atomic spectra, the photoelectric effect and black body radiation where the final problems of physics. Quantum mechanics has its origins on the attempt to explain the differences observed between the emission spectra of gases and a black body. The first showed a discrete behavior while latter turned out continuous. 
 \begin{marginfigure}%
@@ -79,6 +78,47 @@ In what follows, we are going to see how this idea was taken by other scientists
   \item 
 \end{itemize}
 
+\section{Photoelectric effect}
+
+The photoelectric effect consists in the emission of electrons by a metallic surface whe irradiated with light. Such electrons are often called photoelectrons due to their relation to incident radiation. Although it was discovered in 1887 by Hertz whom also confirmed in 1899 the electronic nature of stream of particles emitted, the explanation of this phenomenon was provided in 1905 by A. Einstein. According to classical physics radiation, as a wave, should transfer some of its energy to te metal which in turn should be randomly distributed across all the atoms; therefore, no single electron would gain the necessary energy to jump out of the surface. Thus, classically, \textbf{the photoelectric effect must not occur}\footnote{Classical physics predicts that thermal 
+fluctuations alone would cause electrons to be emitted from a material at 
+temperatures above absolute zero (0 K). This is known as thermal emission or 
+thermionic emission.}.
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{figures/photoelectric_effect.pdf}
+  \caption{photoelectric effect: production of a electric current $i$ when irradiating a metallic surface with radiation of intensity $I$ and frequency $\nu$.}
+  \label{fig:photolectric_diagram}
+\end{marginfigure}
+Counterintuitively, the observations made by Hertz, revealed a different reality; light can make electrons jump out of the surface of a metal, fig. \ref{fig:photolectric_diagram}. The Key remarks on the photoelectric effect can be summarized as follows:
+\begin{itemize}
+  \item No electrons are emitted for radiation below a certain frequency $\nu_0$, no matter the intensity of the radiation. (Lenard 1902)
+  \item No matter how low the intensity, for radiation with frequency above $\nu_0$ electrons are always emitted.
+  \item For radiation with a frequency above the $\nu_0$ value the number of emitted electrons is proportional to the intensity of the radiation and independent of the frequency.
+  \item The kinetic energy of the electrons is linearly proportional to the frequency of the radiation and independent of the intensity (see fig. \ref{fig:photolectric_plot}).
+\end{itemize}
+
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{figures/photoelectric_plot.png}
+  \caption{photoelectric effect: production of a electric current $i$ when irradiating a metallic surface with radiation of intensity $I$ and frequency $\nu$.}
+  \label{fig:photolectric_plot}
+\end{marginfigure}
+ Einstein provided a fundamental explanation to this phenomenon by assigning a particle like behavior to the light. Taking the Planck's idea of the quantization of energy as a ground, he proposed that radiation of frequency $\nu$ was composed out of particles which he called photons, each with an amount of energy $E=h\nu$. He also assumed that each electron in the atom can only interact with one photon simultaneously; absorbing it completely, \textit{i.e.} absorbing its energy. Therefore, if we think about the atom as a potential well, the most external electrons, which are bounded with the lowest energy to the nucleus, are susceptible of being freed of the atom given the minimum necessary energy is provided. That minimum energy to free te electron from the atom is called work function, $W$, and it is different for each material. Thus, the Kinetic energy of an electron that escape from the atom is give by the difference between the energy provided by the photon and the work function
+ \begin{align}\label{eq:kenergy_photoelectric}
+  K = h\nu-W=h(\nu-\nu_0),
+\end{align}
+where $\nu_0=W/h$
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{figures/photo_experiment.pdf}
+  \caption{photoelectric effect: production of a electric current $i$ when irradiating a metallic surface with radiation of intensity $I$ and frequency $\nu$.}
+  \label{fig:photolectric_experiment}
+\end{marginfigure}
+The energy of the electrons can be obtained by making a setup as shown in fig. \ref{fig:photolectric_experiment}. Where the stopping potential, $V_s$, can be adjusted in the source until no electrons are detected in the cathode. In this case, $K=eV_s=\frac{1}{2}m_ev^2$. Therefore,
+\begin{align}\label{eq:stoping_pot_photoelectric}
+  eV_s = h(\nu-\nu_0)\longrightarrow V_s=\frac{h}{e}(\nu-\nu_0)=\frac{hc}{e}\left(\frac{1}{\lambda}-\frac{1}{\lambda_0}\right),
+\end{align}
+The photoelectric effect provides proof of the quantum nature of light and shed light on the light-matter interaction process.
+
+\newpage
 \section{Compton effect}
 The compton effect consist of a shift in wavelength observed for x-ray or $\gamma$-ray photons that scatters away from electrons initially at rest. This interaction provides evidence for the particle behavior of the light; here, the photon is not absorbed, instead, it collides with the electron. After colliding, the electron recoils making the photon lose some of its energy and momentum which is gained to the electron. Therefore, the wavelength of the photon is increased. In fig. \ref{fig:compton} an illustration of process is shown
 \begin{marginfigure}%
@@ -335,5 +375,37 @@ Let $\{\ket{e_k}\}$ be a basis such that $\braket{e_i}{e_j}=\delta_{ij}$, then
   \Rightarrow \ket{\psi} = \sum_k \ket{e_k}\braket{e_k}{\psi} \Rightarrow \sum_k \ket{e_k}\bra{e_k} = I,
 \end{align}
 with $I$ as the identity operator in $\mathcal{H}$.
+
+\subsection{Some properties of the scalar product}
+\begin{itemize}
+  \item $(\psi,\phi) \in \mathbb{C}$
+  \item $(\psi,\phi) = \psi^*\phi$, $(\phi,\psi)=\phi^*\psi$
+  \item $(\psi,\phi) = (\phi,\psi)^*$
+  \item $(\phi, a\psi_1+b\psi_2) = a(\phi,\psi_1)+b(\phi,\psi_2)$
+  \item $(a\phi_1+b\phi_2,\psi) = a^*(\phi_1,\psi)+b^*(\phi_2,\psi)$
+  \item $(\psi,\psi)=\|\psi\|^2\geq0$
+\end{itemize}
+The last property is related to the square integrable condition imposed from the beginning
+\begin{align}
+  (\psi,\psi) = \braket{\psi}{\psi}=\int_\infty ^\infty \psi^*(x)\psi(x)dx,\, finite
+\end{align}
+
+\subsection{Axioms of canonical quantization}
+Now that we have constructed the space in which the all the possible states of our system live, we can use it to define the different operations that are to be performed over such elements. I what follows, a series of axioms are going to be stated and defined in order to convert a classical system into a quantum system.
+
+\begin{itemize}
+  \item [A1.] There exists a Hilbert space for a quantum system with its state defined by $\ket{\psi} \in \mathcal{H}$. $\ket{\psi}$ is the state vector or just the sate.
+  \item [A2.] A physical quantity A in classical mechanics is replaced by a \textit{Hermitian} operator $\hat{A}$ acting on $\mathcal{H}$. A is called observable. The result of measuring A is a eigenvalue of $\hat{A}$. The eigenvalues of $\hat{A}$ are guaranteed to be real due to the Hermiticity of $\hat{A}$.
+  \item [A3.] The Poisson brackets $\{f,g\}=\sum_{i=1}^N\frac{\partial f}{\partial q_i}\frac{\partial g}{\partial p_i}-\frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q_i}$ are replaced by the commutator $[\hat{A},\hat{B}]=\hat{A}\hat{B} - \hat{B}\hat{A}$.
+  \item [A4.]{ For many systems in the arbitrary state $\ket{\psi} \in \mathcal{H}$ the expectation value of $\hat{A}$ at time t is given by
+  \begin{align}
+    \langle A \rangle_t =\frac{\bra{\psi}\hat{A}(t)\ket{\psi}}{\braket{\psi}{\psi}}.
+  \end{align}
+  }
+  \item [A5.] For any physical state $\ket{\psi} \in \mathcal{H}$ there exist an operator for which $\ket{\psi}$ is one of the eigenstates.
+\end{itemize}
+\section{Kets, bras and operators}
+The state of a system contains all the available information about our system that we can access when performing a measurement.
+
 
 \end{document}
